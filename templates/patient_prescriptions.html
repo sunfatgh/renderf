@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Prescriptions</title>
+</head>
+<body>
+    <h1>Prescriptions for Patient</h1>
+    {% if prescriptions %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Medication</th>
+                <th>Dosage</th>
+                <th>Instructions</th>
+                <th>Prescribed On</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prescription in prescriptions %}
+            <tr>
+                <td>{{ prescription[0] }}</td>
+                <td>{{ prescription[2] }}</td>
+                <td>{{ prescription[3] }}</td>
+                <td>{{ prescription[4] }}</td>
+                <td>{{ prescription[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No prescriptions found for this patient.</p>
+    {% endif %}
+</body>
+</html>
